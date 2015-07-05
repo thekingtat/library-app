@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/RedpinAndroid/RedpinAndroid.iml" filepath="$PROJECT_DIR$/RedpinAndroid/RedpinAndroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RedpinCore/RedpinCore.iml" filepath="$PROJECT_DIR$/RedpinCore/RedpinCore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RedpinServer/RedpinServer.iml" filepath="$PROJECT_DIR$/RedpinServer/RedpinServer.iml" />
+    </modules>
+  </component>
+</project>
