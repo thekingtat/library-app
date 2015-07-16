@@ -39,8 +39,8 @@ import java.net.Socket;
  */
 public class ConnectionHandler {
 
-	public static int port = 8000;
-	public static String host = "10.0.2.2";// "10.0.2.2" is the host that runs the emulator
+	public static int port = 5000;
+	public static String host = "192.168.1.206";// "10.0.2.2" is the host that runs the emulator
 	public static String httpProtocol = "http://";
 
 	/**
