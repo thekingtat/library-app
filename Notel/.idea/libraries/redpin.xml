@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="redpin">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/redpin.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
