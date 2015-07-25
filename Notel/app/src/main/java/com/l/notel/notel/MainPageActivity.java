@@ -43,6 +43,10 @@ import android.graphics.BitmapFactory;
 import android.widget.TextView;
 import android.widget.Button;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
+
 import com.l.notel.notel.org.redpin.android.ui.MapViewActivity;
 
 
@@ -56,6 +60,8 @@ public class MainPageActivity extends ActionBarActivity {
 
     WifiSniffer mWifiService;
     Location mLocation;
+
+    private Timer myTimer;
 
 
     @Override
@@ -92,10 +98,37 @@ public class MainPageActivity extends ActionBarActivity {
             imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             layout.addView(imageView);
         }
+        myTimer = new Timer();
+        myTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                TimerMethod();
+            }
 
+        }, 0, 1000);
 
     }
 
+    private void TimerMethod()
+    {
+        //This method is called directly by the timer
+        //and runs in the same thread as the timer.
+
+        //We call the method that will work with the UI
+        //through the runOnUiThread method.
+        this.runOnUiThread(Timer_Tick);
+    }
+
+
+    private Runnable Timer_Tick = new Runnable() {
+        public void run() {
+
+            //This method runs in the same thread as the UI.
+            locate();
+            //Do something to the UI thread here
+
+        }
+    };
     /**
      * {@inheritDoc}
      */
@@ -162,10 +195,15 @@ public class MainPageActivity extends ActionBarActivity {
      * Locates the client
      */
     private void locate() {
-        progressDialog.show();
+        //progressDialog.show();
 
         mLocation = null;
-        mWifiService.forceMeasurement();
+        if (mWifiService != null)
+            mWifiService.forceMeasurement();
+        if (mLocation != null) {
+            TextView updateLoc = (TextView) findViewById(R.id.locationText);
+            updateLoc.setText(mLocation.getSymbolicID());
+        }
 
     }
 
@@ -296,7 +334,13 @@ public class MainPageActivity extends ActionBarActivity {
                             public void onResponse(Response<?> response) {
                                 progressDialog.hide();
                                 Location l = (Location) response.getData();
-                                showLocation(l);
+                                //showLocation(l);
+                                if (l != null)
+                                    mLocation = l;
+                                if (mLocation != null) {
+                                    TextView updateLoc = (TextView) findViewById(R.id.locationText);
+                                    updateLoc.setText(mLocation.getSymbolicID());
+                                }
 
                             }
 
