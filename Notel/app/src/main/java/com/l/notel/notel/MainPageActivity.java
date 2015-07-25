@@ -5,6 +5,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Button;
 
 import com.l.notel.notel.org.redpin.android.ui.MapViewActivity;
 
@@ -15,6 +18,32 @@ public class MainPageActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
+
+        final TextView firstTextView = (TextView) findViewById(R.id.textView);
+
+        Button button = (Button) findViewById(R.id.buttonInbox);
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                firstTextView.setText("You clicked Inbox");
+            }
+        });
+
+        button = (Button) findViewById(R.id.buttonOutbox);
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                firstTextView.setText("You clicked Outbox");
+            }
+        });
+
+        button = (Button) findViewById(R.id.buttonProfile);
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                firstTextView.setText("You clicked Profile");
+            }
+        });
     }
 
     @Override
@@ -43,4 +72,6 @@ public class MainPageActivity extends ActionBarActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 }
