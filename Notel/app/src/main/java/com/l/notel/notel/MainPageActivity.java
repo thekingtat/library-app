@@ -4,6 +4,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Button;
 
 
 public class MainPageActivity extends ActionBarActivity {
@@ -12,6 +15,16 @@ public class MainPageActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
+
+        final TextView firstTextView = (TextView) new TextView(R.id.textview);
+
+        Button button = (Button) findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                firstTextView.setText("You clicked");
+            }
+        });
     }
 
     @Override
@@ -35,4 +48,6 @@ public class MainPageActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
