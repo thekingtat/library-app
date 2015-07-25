@@ -1,9 +1,12 @@
 package com.l.notel.notel;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.l.notel.notel.org.redpin.android.ui.MapViewActivity;
 
 
 public class MainPageActivity extends ActionBarActivity {
@@ -32,7 +35,12 @@ public class MainPageActivity extends ActionBarActivity {
         if (id == R.id.action_settings) {
             return true;
         }
+        if (id == R.id.action_redpin_makemap) {
+            Intent goToRedPinIntent = new Intent (this, MapViewActivity.class);
+            startActivity(goToRedPinIntent);
 
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 }

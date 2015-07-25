@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.l.notel.notel" >
+    package="com.l.notel.notel">
 
     <application
         android:allowBackup="true"
@@ -12,10 +12,27 @@
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".org.redpin.android.ui.MapViewActivity"
+            android:launchMode="singleTask" android:label="@string/map_view_title" >
+        </activity>
+        <activity android:name=".org.redpin.android.ui.list.MainListActivity" />
+        <activity android:name=".org.redpin.android.ui.NewMapActivity" android:launchMode="singleTask" />
+        <activity android:name=".org.redpin.android.ui.list.LocationListActivity" android:launchMode="singleTask"></activity>
+        <activity android:name=".org.redpin.android.ui.list.MapListActivity" android:launchMode="singleTask"></activity>
+        <activity android:launchMode="singleTask" android:name=".org.redpin.android.ui.SettingsActivity"></activity>
+        <activity android:name=".org.redpin.android.ui.ServerPreferences" android:launchMode="singleTask" />
+        <activity android:name=".org.redpin.android.ui.list.SearchListActivity"></activity>
+        <service android:name=".org.redpin.android.net.InternetConnectionManager" />
+
+        <service android:name=".org.redpin.android.net.wifi.WifiSniffer">
+            <intent-filter>
+                <action android:name="com.org.redpin.android.core.WIFI_SERVICE" />
+            </intent-filter>
+        </service><service android:name=".org.redpin.android.net.SynchronizationManager"></service>
     </application>
 
 </manifest>
