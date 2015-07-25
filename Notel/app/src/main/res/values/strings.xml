@@ -68,4 +68,6 @@
     <string name="settings_view_copyright">Copyright:</string>
     <string name="settings_view_copyright_value">ETH Zürich 2010</string>
     <string name="settings_view_server_preferences">Server preferences</string>
+    <string name="title_activity_activity1">Activity1</string>
+    <string name="title_activity_redpin">redpin</string>
 </resources>
