@@ -50,7 +50,7 @@ import android.os.IBinder;
  */
 public class InternetConnectionManager extends Service {
 
-	public static String CONNECTIVITY_ACTION = "org.redpin.android.net.CONNECTIVITY_CHANGED";
+	public static String CONNECTIVITY_ACTION = "com.l.notel.notel.org.redpin.android.net.CONNECTIVITY_CHANGED";
 
 	public static int ONLINE_FLAG = 1;
 

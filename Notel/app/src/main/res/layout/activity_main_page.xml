@@ -5,9 +5,30 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainPageActivity">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
+
+    <EditText
+        android:layout_width="500dp"
+        android:layout_height="120dp"
+        android:inputType="textMultiLine"
+        android:hint="Why not make someone's day by leaving a crumb?"
+        android:scrollbars="vertical"
+        android:id="@+id/crumb"/>
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView" />
+        android:id="@+id/userprofile_hsv"
+        android:layout_below="@+id/crumb"
+        >
+
+        <LinearLayout
+            android:id="@+id/linear_in_userprofile_hsv"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:orientation="horizontal" >
+        </LinearLayout>
+
+    </HorizontalScrollView>
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -26,8 +47,7 @@
         android:text="Outbox"
         android:id="@+id/buttonOutbox"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/buttonInbox"
-        android:layout_toEndOf="@+id/textView" />
+        android:layout_toRightOf="@+id/buttonInbox"/>
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -39,14 +59,7 @@
         android:layout_toRightOf="@+id/buttonOutbox"
         android:layout_toEndOf="@+id/buttonOutbox" />
 
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/listView"
-        android:layout_above="@+id/buttonInbox"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView" />
+
 
 
 

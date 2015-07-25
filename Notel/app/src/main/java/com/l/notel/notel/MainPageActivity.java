@@ -20,6 +20,7 @@ import com.l.notel.notel.org.redpin.android.ui.mapview.MapView;
 import com.l.notel.notel.org.redpin.android.util.ExceptionReporter;
 
 import android.app.AlertDialog;
+import android.widget.LinearLayout;
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -37,6 +38,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.graphics.BitmapFactory;
 import android.widget.TextView;
 import android.widget.Button;
 
@@ -77,31 +80,20 @@ public class MainPageActivity extends ActionBarActivity {
         //end background service init
         setContentView(R.layout.activity_main_page);
 
-        final TextView firstTextView = (TextView) findViewById(R.id.textView);
+        //final TextView firstTextView = (TextView) findViewById(R.id.textView);
+//Horizontal scroll for user profile
+        LinearLayout layout = (LinearLayout) findViewById(R.id.linear_in_userprofile_hsv);
+        for (int i = 0; i < 5; i++) {
+            ImageView imageView = new ImageView(this);
+            imageView.setId(i);
+            imageView.setPadding(2, 2, 2, 2);
+            imageView.setImageBitmap(BitmapFactory.decodeResource(
+                    getResources(), R.drawable.chiopic));
+            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+            layout.addView(imageView);
+        }
 
-        Button button = (Button) findViewById(R.id.buttonInbox);
-        button.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                firstTextView.setText("You clicked Inbox");
-            }
-        });
 
-        button = (Button) findViewById(R.id.buttonOutbox);
-        button.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                firstTextView.setText("You clicked Outbox");
-            }
-        });
-
-        button = (Button) findViewById(R.id.buttonProfile);
-        button.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                firstTextView.setText("You clicked Profile");
-            }
-        });
     }
 
     /**

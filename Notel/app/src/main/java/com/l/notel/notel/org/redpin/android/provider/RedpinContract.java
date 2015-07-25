@@ -36,7 +36,7 @@ public class RedpinContract {
 	/**
 	 * The authority for the redpin provider
 	 */
-	public static final String AUTHORITY = "org.redpin.android.provider";
+	public static final String AUTHORITY = "com.l.notel.notel.org.redpin.android.provider";
 
 	/**
 	 * An optional parameter used in URIs for the redpin provider to specify
