@@ -16,13 +16,29 @@ public class MainPageActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
 
-        final TextView firstTextView = (TextView) new TextView(R.id.textview);
+        final TextView firstTextView = (TextView) findViewById(R.id.textView);
 
-        Button button = (Button) findViewById(R.id.button);
+        Button button = (Button) findViewById(R.id.buttonInbox);
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                firstTextView.setText("You clicked");
+                firstTextView.setText("You clicked Inbox");
+            }
+        });
+
+        button = (Button) findViewById(R.id.buttonOutbox);
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                firstTextView.setText("You clicked Outbox");
+            }
+        });
+
+        button = (Button) findViewById(R.id.buttonProfile);
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                firstTextView.setText("You clicked Profile");
             }
         });
     }
