@@ -4,11 +4,8 @@
 
     <string name="app_name">Notel</string>
 
-<<<<<<< HEAD
-    <string name="hello_world">Hello again!</string>
-=======
     <string name="hello_world">Hello world! Ken</string>
->>>>>>> origin/master
+
     <string name="action_settings">Settings</string>
 
     <string name="redpin_authority">org.redpin.android.provider</string>

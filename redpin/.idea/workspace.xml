@@ -7,19 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a58a8b3e-8646-47c3-acbc-9b73710d711f" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Notel/local.properties" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Notel/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/../Notel/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Notel/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/../Notel/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Notel/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/../Notel/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Notel/build/intermediates/gradle_project_sync_data.bin" afterPath="$PROJECT_DIR$/../Notel/build/intermediates/gradle_project_sync_data.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Notel/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/../Notel/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RedpinAndroid/AndroidManifest.xml" afterPath="$PROJECT_DIR$/RedpinAndroid/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Notel/app/src/main/java/com/l/notel/notel/MainPageActivity.java" afterPath="$PROJECT_DIR$/../Notel/app/src/main/java/com/l/notel/notel/MainPageActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Notel/.idea/libraries/appcompat_v7_22_2_0.xml" afterPath="$PROJECT_DIR$/../Notel/.idea/libraries/appcompat_v7_22_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Notel/.idea/gradle.xml" afterPath="$PROJECT_DIR$/../Notel/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Notel/local.properties" afterPath="$PROJECT_DIR$/../Notel/local.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Notel/.idea/misc.xml" afterPath="$PROJECT_DIR$/../Notel/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Notel/app/src/main/res/layout/activity_main_page.xml" afterPath="$PROJECT_DIR$/../Notel/app/src/main/res/layout/activity_main_page.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Notel/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/../Notel/app/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Notel/.idea/libraries/support_annotations_22_2_0.xml" afterPath="$PROJECT_DIR$/../Notel/.idea/libraries/support_annotations_22_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Notel/.idea/libraries/support_v4_22_2_0.xml" afterPath="$PROJECT_DIR$/../Notel/.idea/libraries/support_v4_22_2_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="redpin.iws" />
@@ -653,7 +649,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="20" y="43" width="1400" height="757" extended-state="1" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
