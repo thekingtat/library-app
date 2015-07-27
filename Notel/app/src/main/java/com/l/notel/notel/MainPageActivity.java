@@ -20,6 +20,8 @@ import com.l.notel.notel.org.redpin.android.ui.mapview.MapView;
 import com.l.notel.notel.org.redpin.android.util.ExceptionReporter;
 
 import android.app.AlertDialog;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
@@ -40,6 +42,8 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.graphics.BitmapFactory;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Button;
 
@@ -88,16 +92,7 @@ public class MainPageActivity extends ActionBarActivity {
 
         //final TextView firstTextView = (TextView) findViewById(R.id.textView);
 //Horizontal scroll for user profile
-        LinearLayout layout = (LinearLayout) findViewById(R.id.linear_in_userprofile_hsv);
-        for (int i = 0; i < 5; i++) {
-            ImageView imageView = new ImageView(this);
-            imageView.setId(i);
-            imageView.setPadding(2, 2, 2, 2);
-            imageView.setImageBitmap(BitmapFactory.decodeResource(
-                    getResources(), R.drawable.chiopic));
-            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-            layout.addView(imageView);
-        }
+
         myTimer = new Timer();
         myTimer.schedule(new TimerTask() {
             @Override
@@ -105,7 +100,47 @@ public class MainPageActivity extends ActionBarActivity {
                 TimerMethod();
             }
 
-        }, 0, 1000);
+        }, 0, 3000);
+
+        LinearLayout linearlayout = (LinearLayout) findViewById(R.id.linear);
+        for (int i = 0; i < 5; i++) {
+            ImageView imageView = new ImageView(this);
+            imageView.setId(i);
+            imageView.setPadding(2, 2, 2, 2);
+            if (i==0){imageView.setImageBitmap(BitmapFactory.decodeResource(
+                    getResources(), R.drawable.haikuking));} else if (i==1) {
+                imageView.setImageBitmap(BitmapFactory.decodeResource(
+                        getResources(), R.drawable.poetextraordinaire));
+            } else if (i==2){
+                imageView.setImageBitmap(BitmapFactory.decodeResource(
+                        getResources(), R.drawable.quotemaster));
+            } else if (i==3){
+                imageView.setImageBitmap(BitmapFactory.decodeResource(
+                        getResources(), R.drawable.starcritic));
+            } else if (i==4){
+                imageView.setImageBitmap(BitmapFactory.decodeResource(
+                        getResources(), R.drawable.storywizard));
+            }
+            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+            linearlayout.addView(imageView);
+        }
+
+        String[] trails = {"A fun fact was left at the Computing Section", "A haiku was left at " +
+                "the Fiction Section"};
+
+        ListAdapter trailAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, trails);
+
+        ListView listOfTrails = (ListView)findViewById(R.id.trail_list);
+
+        listOfTrails.setAdapter(trailAdapter);
+
+        String[] crumbspicked = {"Roses are red, violets are blue, love never cross my mind until I meet you", "Over-riped sushi. The Master is full of regret."};
+
+        ListAdapter crumbsPickedAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, crumbspicked);
+
+        ListView listOfCrumbsPicked = (ListView)findViewById(R.id.crumbspicked_list);
+
+        listOfCrumbsPicked.setAdapter(crumbsPickedAdapter);
 
     }
 
@@ -124,7 +159,8 @@ public class MainPageActivity extends ActionBarActivity {
         public void run() {
 
             //This method runs in the same thread as the UI.
-            locate();
+            if (mWifiService != null)
+                locate();
             //Do something to the UI thread here
 
         }
@@ -201,8 +237,9 @@ public class MainPageActivity extends ActionBarActivity {
         if (mWifiService != null)
             mWifiService.forceMeasurement();
         if (mLocation != null) {
-            TextView updateLoc = (TextView) findViewById(R.id.locationText);
-            updateLoc.setText(mLocation.getSymbolicID());
+            TextView updateLoc = (TextView) findViewById(R.id.dropcrumb_loc);
+            String locationText = "Location: "+mLocation.getSymbolicID()+ " @ Toa Payoh Library";
+            updateLoc.setText(locationText);
         }
 
     }
@@ -297,7 +334,7 @@ public class MainPageActivity extends ActionBarActivity {
                             public void onResponse(Response<?> response) {
 
                                 if (firstMeasurement) {
-                                    progressDialog.hide();
+                                //    progressDialog.hide();
                                     mapView.addNewLocation(mLocation);
                                     firstMeasurement = false;
                                 }
@@ -309,7 +346,7 @@ public class MainPageActivity extends ActionBarActivity {
 
                             @Override
                             public void onFailure(Response<?> response) {
-                                progressDialog.hide();
+                               // progressDialog.hide();
                                 Log.i(TAG,
                                         "addNewLocation: setFingerprint failed: "
                                                 + response.getStatus() + ", "
@@ -324,7 +361,7 @@ public class MainPageActivity extends ActionBarActivity {
 
                             @Override
                             public void onFailure(Response<?> response) {
-                                progressDialog.hide();
+                              //  progressDialog.hide();
 
                                 new AlertDialog.Builder(MainPageActivity.this).setMessage(response.getMessage()).setPositiveButton(android.R.string.ok, null).create().show();
 
@@ -332,14 +369,15 @@ public class MainPageActivity extends ActionBarActivity {
 
                             @Override
                             public void onResponse(Response<?> response) {
-                                progressDialog.hide();
+                               // progressDialog.hide();
                                 Location l = (Location) response.getData();
                                 //showLocation(l);
                                 if (l != null)
                                     mLocation = l;
                                 if (mLocation != null) {
-                                    TextView updateLoc = (TextView) findViewById(R.id.locationText);
-                                    updateLoc.setText(mLocation.getSymbolicID());
+                                    TextView updateLoc = (TextView) findViewById(R.id.dropcrumb_loc);
+                                    String locationText = "Location: "+mLocation.getSymbolicID()+ " @ Toa Payoh Library";
+                                    updateLoc.setText(locationText);
                                 }
 
                             }
@@ -366,6 +404,8 @@ public class MainPageActivity extends ActionBarActivity {
         }
 
     };
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -394,4 +434,18 @@ public class MainPageActivity extends ActionBarActivity {
     }
 
 
+    public void onClickDropCrumb(View view) {
+        EditText crumbBox = (EditText) findViewById(R.id.crumb);
+        String textToSend = crumbBox.getText().toString();
+
+        Intent goToDropCrumbIntent = new Intent (this, DropCrumbActivity.class);
+        goToDropCrumbIntent.putExtra("message", textToSend);
+        startActivity(goToDropCrumbIntent);
+
+    }
+    public void enableTextInput(View view){
+        EditText crumbBox = (EditText) findViewById(R.id.crumb);
+        crumbBox.setEnabled(true);
+
+    }
 }

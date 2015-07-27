@@ -4,12 +4,12 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/crumbs_logo"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainPageActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -21,6 +21,7 @@
         </activity>
         <activity android:name=".org.redpin.android.ui.list.MainListActivity" />
         <activity android:name=".org.redpin.android.ui.NewMapActivity" android:launchMode="singleTask" />
+        <activity android:name=".DropCrumbActivity" android:launchMode="singleTask" />
         <activity android:name=".org.redpin.android.ui.list.LocationListActivity" android:launchMode="singleTask"></activity>
         <activity android:name=".org.redpin.android.ui.list.MapListActivity" android:launchMode="singleTask"></activity>
         <activity android:launchMode="singleTask" android:name=".org.redpin.android.ui.SettingsActivity"></activity>
